@@ -9,8 +9,11 @@
     "jwt-decode": "^2.2.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
+    "react-redux": "^6.0.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -27,5 +30,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "proxy": "https://asia-east2-socialape-73053.cloudfunctions.net/api"
+  "proxy": "https://asia-east2-socialape-73053.cloudfunctions.net/api/"
 }
