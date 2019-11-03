@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
 import MyButton from "../../util/MyButton";
 import LikeButton from "./LikeButton";
-import Comments from './Comments';
+import Comments from "./Comments";
+import CommentForm from "./CommentForm";
 import dayjs from "dayjs";
 import { Link } from "react-router-dom";
 // MUI Stuff
@@ -18,7 +19,7 @@ import UnfoldMore from "@material-ui/icons/UnfoldMore";
 import ChatIcon from "@material-ui/icons/Chat";
 // Redux stuff
 import { connect } from "react-redux";
-import { getScream } from "../../redux/actions/dataActions";
+import { getScream, clearErrors } from "../../redux/actions/dataActions";
 
 const styles = theme => ({
   ...theme,
@@ -60,6 +61,7 @@ class ScreamDialog extends Component {
   };
   handleClose = () => {
     this.setState({ open: false });
+    this.props.clearErrors();
   };
 
   render() {
@@ -102,8 +104,8 @@ class ScreamDialog extends Component {
           </Typography>
           <hr className={classes.invisibleSeparator} />
           <Typography variant="body1">{body}</Typography>
-          <br/>
-          <br/>
+          <br />
+          <br />
           <LikeButton screamId={screamId} />
           <span>{likeCount} likes</span>
           <MyButton tip="comments">
@@ -111,7 +113,7 @@ class ScreamDialog extends Component {
           </MyButton>
           <span>{commentCount} comments</span>
         </Grid>
-        {/* TODO: comment input */}
+        <CommentForm screamId={screamId} />
         <hr className={classes.visibleSeparator} />
         <Comments comments={comments} />
       </Grid>
@@ -148,6 +150,7 @@ class ScreamDialog extends Component {
 }
 
 ScreamDialog.propTypes = {
+  clearErrors: PropTypes.func.isRequired,
   getScream: PropTypes.func.isRequired,
   screamId: PropTypes.string.isRequired,
   userHandle: PropTypes.string.isRequired,
@@ -161,7 +164,8 @@ const mapStateToProps = state => ({
 });
 
 const mapActionsToProps = {
-  getScream
+  getScream,
+  clearErrors
 };
 
 export default connect(
