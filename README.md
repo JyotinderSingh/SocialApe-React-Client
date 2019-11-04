@@ -2,6 +2,8 @@
 #### This is the React client for the SocialApe [Firebase Backend](https://github.com/JyotinderSingh/SocialApe-Firebase-Functions).
 ---
 
+![Home Page](https://i.imgur.com/akm6uk5.png)
+
 SocialApe is meant to be a twitter style social media platform, with functionalities such as
 - User registration/authentication
 - Create, Delete posts

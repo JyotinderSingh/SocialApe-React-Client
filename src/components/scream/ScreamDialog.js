@@ -123,8 +123,8 @@ class ScreamDialog extends Component {
           <Typography variant="body1">{body}</Typography>
           <br />
           <br />
-          <LikeButton screamId={screamId} />
-          <span>{likeCount} likes</span>
+          {/* <LikeButton screamId={screamId} /> */}
+          {/* <span>{likeCount} likes</span> */}
           <MyButton tip="comments">
             <ChatIcon color="primary" />
           </MyButton>
