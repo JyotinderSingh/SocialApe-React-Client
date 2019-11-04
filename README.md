@@ -17,5 +17,5 @@ SocialApe is meant to be a twitter style social media platform, with functionali
 ### Steps to run:
 ```sh
 $ npm install
-$ npm run
+$ npm start
 ```
